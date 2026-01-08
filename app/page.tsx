@@ -58,9 +58,9 @@ export default function Portfolio() {
         if (entry.target === skillsRef.current) setSkillsInView(entry.isIntersecting)
       })
     }, observerOptions)
-    ;[aboutRef, experienceRef, projectsRef, skillsRef].forEach((ref) => {
-      if (ref.current) observer.observe(ref.current)
-    })
+      ;[aboutRef, experienceRef, projectsRef, skillsRef].forEach((ref) => {
+        if (ref.current) observer.observe(ref.current)
+      })
 
     return () => observer.disconnect()
   }, [])
@@ -88,43 +88,57 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      company: "Commission Nationale de la Protection des Données Personnelles",
-      position: "Développeur Full Stack - Chargé de mission",
-      period: "2025",
+      company: "Commission Nationale de la Protection des Données Personnelles (CNDP)",
+      position: "Chargé de mission Data Scientist & Développeur Full Stack",
+      period: "Mai 2025 – Présent",
       tasks: [
-        "Développement de requêtes SQL complexes et automatisation Python pour extraction de données Oracle APEX",
-        "Audit Front-end et Back-End de Chafafiya 2.0 (Next.js, Nest.js, TypeORM, MSSQL)",
-        "Déploiement Wiki.js et conception de workflows métier",
-        "Développement et production module Odoo pour gestion RH",
-      ],
-    },
-    
-    {
-      company: "Kshuttle",
-      position: "Développeur Full Stack",
-      period: "2024",
-      tasks: [
-        "Développement application intégrée gestion des dépenses Web/Mobile",
-        "Supervision Lease Insight alignée aux normes IFRS 16",
-        "Optimisation fonctionnalités avec Java, Docker et OLAP",
+        "Automatisation de pipelines de données (SQL avancé, Python, Excel) pour extraction, traitement et reporting sous Oracle APEX",
+        "Audit fonctionnel et technique de Chafafiya 2.0 (Next.js, NestJS, TypeORM, MSSQL)",
+        "Mise en place de la documentation technique et knowledge management avec Wiki.js",
+        "Conception et développement d’un module RH sur Odoo (paramétrage et adaptation métier)",
+        "Développement d’une application de gestion des pôles (Next.js, Node.js, MySQL) avec reporting automatisé",
       ],
     },
     {
-      company: "Cabinet topographique - Ahaouari",
+      company: "Auto-entrepreneur",
+      position: "Développeur Full Stack – Projet BeActive",
+      period: "Fév 2025 – Juin 2025",
+      tasks: [
+        "Conception et développement d’une application mobile React Native avec API Node.js et Firebase",
+        "Implémentation de l’authentification, gestion des abonnements et intégration paiement",
+        "Gestion d’équipes, planification de matchs et synchronisation temps réel",
+        "Structuration du back-end Node.js et sécurisation Firebase (rôles et règles)",
+      ],
+    },
+    {
+      company: "Kshuttle (France)",
       position: "Stagiaire Développeur Full Stack",
-      period: "2023",
+      period: "Avr 2024 – Sep 2024",
       tasks: [
-        "Conception architecture avec technologies modernes (React.js, Express.js)",
-        "Solutions front-end et back-end avec Firebase et React Native",
+        "Maintenance et évolution de l’application Lease Insight conforme IFRS 16",
+        "Développement Java et industrialisation via Docker",
+        "Optimisation des traitements OLAP pour analyses financières",
+        "Améliorations UI via CSS, JEXL et outils Shuttle",
       ],
-    },{
-      company: "IsyChain",
-      position: "Développeur Full Stack Indépendant",
-      period: "2022",
+    },
+    {
+      company: "Cabinet topographique – Ahaouari",
+      position: "Stagiaire Développeur Full Stack Web & Mobile",
+      period: "Juin 2023 – Août 2023",
       tasks: [
-        "Mise au point IsySend - système de messagerie sécurisé avec blockchain",
-        "Conception et développement de contrats intelligents pour cryptage/décryptage",
-        "Déploiement interface dynamique avec React.js et Framer Motion",
+        "Développement application web React.js avec back-end Express.js (API REST)",
+        "Développement mobile React Native avec Firebase",
+        "Ajout de fonctionnalités de suivi et reporting",
+      ],
+    },
+    {
+      company: "IsyChain",
+      position: "Stagiaire Développeur Full Stack Blockchain",
+      period: "Jan 2022 – Août 2022",
+      tasks: [
+        "Conception et développement de IsySend, messagerie sécurisée basée sur la blockchain",
+        "Développement de smart contracts pour chiffrement et déchiffrement",
+        "Interface web React.js avec Framer Motion",
       ],
     },
   ]
@@ -133,32 +147,35 @@ export default function Portfolio() {
     {
       name: "BeActive",
       description:
-        "Application de gestion des abonnements, paiements, coordination d'équipes et planification de matchs",
+        "Application mobile de gestion d’équipes sportives, abonnements, paiements et planification de matchs",
       tech: ["React Native", "Node.js", "Firebase"],
       link: "#",
     },
     {
       name: "IsySend",
       description:
-        "Système de messagerie hautement sécurisé utilisant la technologie blockchain et les contrats intelligents",
+        "Système de messagerie sécurisée basé sur la blockchain garantissant confidentialité et intégrité",
       tech: ["React.js", "Blockchain", "Smart Contracts", "Framer Motion"],
       link: "#",
     },
     {
       name: "Lease Insight",
-      description: "Application financière supervisée pour gestion des dépenses conforme aux normes IFRS 16",
+      description:
+        "Application financière conforme IFRS 16 avec analyses OLAP et industrialisation Docker",
       tech: ["Java", "Docker", "OLAP"],
       link: "#",
     },
     {
       name: "Chafafiya 2.0",
-      description: "Portail national d'accès à l'information avec audit complet front-end et back-end",
-      tech: ["Next.js", "Nest.js", "TypeORM", "MSSQL"],
+      description:
+        "Portail national d’accès à l’information – audit technique et fonctionnel complet",
+      tech: ["Next.js", "NestJS", "TypeORM", "MSSQL"],
       link: "#",
     },
   ]
 
   const skills = {
+    "Data & Reporting": ["Python", "SQL avancé", "Excel", "Power BI"],
     "Web Development": ["HTML", "JavaScript", "CSS", "React.js", "Node.js", "Express", ".NET", "JEE"],
     Programming: ["C/C++", "Java", "Python", "TypeScript"],
     "Data & Analytics": ["Power BI", "Hadoop", "Talend", "SQL"],
@@ -224,9 +241,8 @@ export default function Portfolio() {
           {/* Profile Image */}
           <div className="flex-shrink-0 w-full lg:w-auto lg:order-1">
             <div
-              className={`relative w-64 h-80 mx-auto lg:mx-0 transition-all duration-1000 ${
-                heroInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-              }`}
+              className={`relative w-64 h-80 mx-auto lg:mx-0 transition-all duration-1000 ${heroInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+                }`}
             >
               <img
                 src="/profile.png"
@@ -239,16 +255,14 @@ export default function Portfolio() {
 
           {/* Content */}
           <div
-            className={`flex-1 text-center lg:text-left lg:order-2 transition-all duration-1000 ${
-              heroInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-            }`}
+            className={`flex-1 text-center lg:text-left lg:order-2 transition-all duration-1000 ${heroInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              }`}
           >
             <div className="mb-8">
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance text-foreground">Taher Bellout</h1>
-              <p className="text-xl md:text-2xl text-secondary font-semibold mb-4">Développeur Ingénieur Full Stack</p>
+              <p className="text-xl md:text-2xl text-secondary font-semibold mb-4">Data Scientist & Développeur Full Stack</p>
               <p className="text-lg text-foreground/75 max-w-2xl text-pretty">
-                Expertise en développement web, blockchain, cloud et méthodes informatiques appliquées à la gestion
-                d'entreprise.
+                Profil hybride Full Stack & Data : automatisation, reporting, audit applicatif et développement d’applications web et mobiles jusqu’à la mise en production.
               </p>
             </div>
 
@@ -299,17 +313,15 @@ export default function Portfolio() {
       <section id="about" ref={aboutRef} className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <h2
-            className={`text-4xl font-bold mb-8 text-foreground transition-all duration-1000 ${
-              aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-4xl font-bold mb-8 text-foreground transition-all duration-1000 ${aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             À propos
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div
-              className={`transition-all duration-1000 delay-100 ${
-                aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`transition-all duration-1000 delay-100 ${aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               <p className="text-foreground/75 leading-relaxed mb-4">
                 Je suis un développeur ingénieur Full Stack passionné par la création de solutions technologiques
@@ -323,9 +335,8 @@ export default function Portfolio() {
               </p>
             </div>
             <div
-              className={`bg-muted/40 p-8 rounded-lg border border-border transition-all duration-1000 delay-200 ${
-                aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`bg-muted/40 p-8 rounded-lg border border-border transition-all duration-1000 delay-200 ${aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               <h3 className="font-semibold text-lg mb-4 text-foreground">Formation</h3>
               <div className="space-y-4">
@@ -353,9 +364,8 @@ export default function Portfolio() {
       <section id="experience" ref={experienceRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/10">
         <div className="max-w-4xl mx-auto">
           <h2
-            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${
-              experienceInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${experienceInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Expérience
           </h2>
@@ -363,9 +373,8 @@ export default function Portfolio() {
             {experiences.map((exp, idx) => (
               <div
                 key={idx}
-                className={`border-l-2 border-secondary pl-8 pb-8 transition-all duration-1000 ${
-                  experienceInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-                }`}
+                className={`border-l-2 border-secondary pl-8 pb-8 transition-all duration-1000 ${experienceInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                  }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
                 <div className="absolute -left-2.5 w-5 h-5 bg-secondary rounded-full"></div>
@@ -394,9 +403,8 @@ export default function Portfolio() {
       <section id="projects" ref={projectsRef} className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2
-            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${
-              projectsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${projectsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Projets
           </h2>
@@ -404,9 +412,8 @@ export default function Portfolio() {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className={`border border-border rounded-lg p-6 hover:border-secondary hover:shadow-lg transition-all duration-300 group bg-card ${
-                  projectsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+                className={`border border-border rounded-lg p-6 hover:border-secondary hover:shadow-lg transition-all duration-300 group bg-card ${projectsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
                 <div className="flex justify-between items-start mb-4">
@@ -436,9 +443,8 @@ export default function Portfolio() {
       <section id="skills" ref={skillsRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/10">
         <div className="max-w-4xl mx-auto">
           <h2
-            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${
-              skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-4xl font-bold mb-12 text-foreground transition-all duration-1000 ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Compétences
           </h2>
@@ -446,9 +452,8 @@ export default function Portfolio() {
             {Object.entries(skills).map(([category, items], categoryIdx) => (
               <div
                 key={category}
-                className={`transition-all duration-1000 ${
-                  skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+                className={`transition-all duration-1000 ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 style={{ transitionDelay: `${categoryIdx * 100}ms` }}
               >
                 <h3 className="text-lg font-semibold mb-4 text-secondary">{category}</h3>
